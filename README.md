@@ -40,4 +40,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
-Maria Jose Basgall - [GitHub](https://github.com/majobasgall) - [Website](https://www.majobasgall.github.io)
+Maria Jose Basgall - [GitHub](https://github.com/majobasgall) - [Website](https://majobasgall.github.io)
