@@ -280,8 +280,20 @@ function getReadme(user, repo, readmeContentElement) {
                 //var accessToken = "";
 
                 // GitHub API endpoint for retrieving repositories
-                var apiUrl = "https://api.github.com/users/" + username + "/repos";
+                // var apiUrl = "https://api.github.com/users/" + username + "/repos";
                 //var apiUrl = "https://api.github.com/users/" + username + "/repos?access_token=YOUR_ACCESS_TOKEN";
+                //var apiUrl = `https://api.github.com/users/${username}/repos?access_token=${process.env.GITHUB_TOKEN}`;
+
+                var apiUrl = '';
+
+                if (typeof process !== 'undefined' && process.env.GITHUB_TOKEN) {
+                  apiUrl = `https://api.github.com/users/${username}/repos?access_token=${process.env.GITHUB_TOKEN}`;
+                } else {
+                  // Use a custom environment variable for local testing
+                  apiUrl = `https://api.github.com/users/${username}/repos`;
+                }
+
+
 
                 // Function to fetch and display repositories
                 function fetchRepositories() {
